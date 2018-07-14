@@ -10,6 +10,11 @@ class Application extends StatelessWidget {
       title: 'Flutter for 24h',
       theme: new ThemeData(
         primaryColor: Colors.white,
+        primaryTextTheme: new TextTheme(
+            title: new TextStyle(
+          color: Colors.black,
+        )),
+        primaryColorBrightness: Brightness.dark,
       ),
       home: new SplashPage(),
     );

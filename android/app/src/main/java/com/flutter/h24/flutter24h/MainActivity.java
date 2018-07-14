@@ -1,7 +1,5 @@
 package com.flutter.h24.flutter24h;
 
-import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 
 import io.flutter.app.FlutterActivity;
@@ -15,9 +13,9 @@ public class MainActivity extends FlutterActivity implements MethodChannel.Metho
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setStatusBarColor(Color.TRANSPARENT);
-        }
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//            getWindow().setStatusBarColor(Color.TRANSPARENT);
+//        }
         GeneratedPluginRegistrant.registerWith(this);
         initMethodChannel();
     }

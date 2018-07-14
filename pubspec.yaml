@@ -37,6 +37,18 @@ flutter:
   # https://flutter.io/assets-and-images/#from-packages
   assets:
     - assets/images/ic_launcher.png
+    - assets/images/ic_home.png
+    - assets/images/ic_home_click.png
+    - assets/images/ic_follow.png
+    - assets/images/ic_follow_click.png
+    - assets/images/ic_activity.png
+    - assets/images/ic_activity_click.png
+    - assets/images/ic_video.png
+    - assets/images/ic_video_click.png
+    - assets/images/ic_find.png
+    - assets/images/ic_find_click.png
+    - assets/images/bg.jpg
+    - assets/images/ic_more_btn.png
 
 
   # To add custom fonts to your application, add a fonts section here,

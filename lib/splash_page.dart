@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_24h/home_page.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_24h/index_page.dart';
 
 class SplashPage extends StatefulWidget {
   @override
@@ -9,9 +10,8 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
-    return new Container(
-      color: Colors.white,
-      child: new Stack(
+    return new Scaffold(
+      body: new Stack(
         alignment: AlignmentDirectional.center,
         children: <Widget>[
           buildSkipButton(),
@@ -25,8 +25,8 @@ class _SplashPageState extends State<SplashPage> {
     return new Positioned(
       child: new GestureDetector(
         onTap: () {
-          Navigator.of(context).push(new MaterialPageRoute(
-                builder: (BuildContext context) => new HomePage(),
+          Navigator.of(context).pushReplacement(new MaterialPageRoute(
+                builder: (BuildContext context) => new IndexPage(),
               ));
         },
         child: new CircleAvatar(
