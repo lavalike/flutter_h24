@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_24h/entity/ad_entity.dart';
 
 class ADItem extends StatefulWidget {
+  final AdEntity data;
+
+  const ADItem({Key key, this.data}) : super(key: key);
+
   @override
   _ADItemState createState() => _ADItemState();
 }
@@ -17,18 +22,20 @@ class _ADItemState extends State<ADItem> {
             child: new Column(
               children: <Widget>[
                 new Text(
-                  "南京城东郊的钟山风景区内，景点非常密集，除了明孝陵、中山路和灵谷寺这三大景区以外，大概就数美龄宫最吸引人了。美龄宫其...",
+                  widget.data.title,
                   style: new TextStyle(
                     fontSize: 15.5,
                     fontWeight: FontWeight.bold,
                   ),
+                  maxLines: 3,
+                  overflow: TextOverflow.ellipsis,
                 ),
                 new Padding(
                   padding: new EdgeInsets.only(top: 15.0),
                   child: new Stack(
                     children: <Widget>[
                       new Image.asset(
-                        "assets/images/bg1.jpeg",
+                        widget.data.imageUrl,
                         width: 330.0,
                         height: 193.0,
                         fit: BoxFit.cover,

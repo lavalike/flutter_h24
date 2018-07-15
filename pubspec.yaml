@@ -54,6 +54,13 @@ flutter:
     - assets/images/ic_ice_anim.gif
     - assets/images/ic_search.png
     - assets/images/ic_days_tag_bg.png
+    - assets/images/ic_like_btn.png
+    - assets/images/ic_comment_btn.png
+    - assets/images/ic_forward_btn.png
+    - assets/images/ic_avatar_default.png
+    - assets/images/ic_avatar1.jpeg
+    - assets/images/ic_avatar2.jpeg
+    - assets/images/ic_avatar3.jpeg
 
 
   # To add custom fonts to your application, add a fonts section here,

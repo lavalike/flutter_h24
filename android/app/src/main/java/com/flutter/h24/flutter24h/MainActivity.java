@@ -1,6 +1,7 @@
 package com.flutter.h24.flutter24h;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import io.flutter.app.FlutterActivity;
 import io.flutter.plugin.common.MethodCall;
@@ -26,6 +27,15 @@ public class MainActivity extends FlutterActivity implements MethodChannel.Metho
 
     @Override
     public void onMethodCall(MethodCall methodCall, MethodChannel.Result result) {
+        if (methodCall.method.equals("showToast")) {
+            if (methodCall.arguments != null)
+                showToast(String.valueOf(methodCall.arguments));
+        } else {
+            result.notImplemented();
+        }
+    }
 
+    public void showToast(String msg) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 }

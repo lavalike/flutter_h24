@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_24h/entity/article_entity.dart';
+import 'package:flutter_24h/util/toast_util.dart';
 
-class ArticleNewsItem extends StatefulWidget {
+class NewsItem extends StatefulWidget {
+  final NewsEntity data;
+
+  const NewsItem({Key key, @required this.data}) : super(key: key);
+
   @override
   _ArticleNewsItemState createState() => _ArticleNewsItemState();
 }
 
-class _ArticleNewsItemState extends State<ArticleNewsItem> {
+class _ArticleNewsItemState extends State<NewsItem> {
   @override
   Widget build(BuildContext context) {
     return new InkWell(
@@ -25,13 +31,13 @@ class _ArticleNewsItemState extends State<ArticleNewsItem> {
                       children: <Widget>[
                         new CircleAvatar(
                           backgroundImage:
-                              new AssetImage("assets/images/ic_launcher.png"),
+                              new AssetImage(widget.data.columnIconUrl),
                           radius: 18.0,
                         ),
                         new Padding(
                           padding: new EdgeInsets.only(left: 10.0),
                           child: new Text(
-                            "阅中国",
+                            widget.data.columnName,
                             style: new TextStyle(
                               fontSize: 14.0,
                               fontWeight: FontWeight.bold,
@@ -42,7 +48,7 @@ class _ArticleNewsItemState extends State<ArticleNewsItem> {
                     ),
                     new GestureDetector(
                       onTap: () {
-                        //点击订阅
+                        ToastUtil.show("订阅");
                       },
                       child: new Container(
                         padding: new EdgeInsets.only(
@@ -73,7 +79,7 @@ class _ArticleNewsItemState extends State<ArticleNewsItem> {
                   child: new Row(
                     children: <Widget>[
                       new Image.asset(
-                        "assets/images/bg.jpg",
+                        widget.data.listPics,
                         width: 145.0,
                         height: 104.0,
                         fit: BoxFit.cover,
@@ -87,18 +93,20 @@ class _ArticleNewsItemState extends State<ArticleNewsItem> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
                               new Text(
-                                "浙江60多个景区关门，另有多趟航班取消！省旅游局提醒，台风天谨慎...",
+                                widget.data.title,
                                 style: new TextStyle(
                                   fontSize: 15.5,
                                   fontWeight: FontWeight.bold,
                                 ),
+                                maxLines: 3,
+                                overflow: TextOverflow.ellipsis,
                               ),
                               new Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: <Widget>[
                                   new Text(
-                                    "1.1万人阅读",
+                                    "${widget.data.readNumStr}人阅读",
                                     style: new TextStyle(
                                       fontSize: 10.0,
                                       color: Colors.grey,

@@ -17,9 +17,9 @@ class Application extends StatelessWidget {
         primaryColor: Colors.white,
         primaryTextTheme: new TextTheme(
             title: new TextStyle(
-          color: Colors.black,
         )),
         primaryColorBrightness: Brightness.dark,
+        primarySwatch: Colors.grey,
       ),
       home: new SplashPage(),
     );
