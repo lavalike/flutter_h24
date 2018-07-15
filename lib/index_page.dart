@@ -47,11 +47,66 @@ class _IndexPageState extends State<IndexPage>
 
   @override
   Widget build(BuildContext context) {
-//    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-//      statusBarColor: Colors.transparent,
-//      statusBarIconBrightness: Brightness.dark,
-//    ));
     return new Scaffold(
+      appBar: new AppBar(
+        elevation: 0.0,
+        titleSpacing: 0.0,
+        title: new SizedBox(
+          height: 54.0,
+          child: new Row(
+            children: <Widget>[
+              new Padding(
+                padding: new EdgeInsets.all(5.0),
+                child: new Image.asset(
+                  "assets/images/ic_ice_anim.gif",
+                  repeat: ImageRepeat.repeat,
+                ),
+              ),
+              new Expanded(
+                flex: 1,
+                child: new Container(
+                  height: 40.0,
+                  decoration: new BoxDecoration(
+                    color: Colors.grey[200],
+                    borderRadius:
+                        new BorderRadius.all(new Radius.circular(100.0)),
+                  ),
+                  child: new Row(
+                    children: <Widget>[
+                      new Padding(
+                        padding: new EdgeInsets.only(left: 8.5),
+                        child: new Image.asset(
+                          "assets/images/ic_search.png",
+                          width: 14.0,
+                          height: 14.0,
+                        ),
+                      ),
+                      new Padding(
+                        padding: new EdgeInsets.only(left: 9.0),
+                        child: new Text(
+                          "搜索感兴趣的文章、栏目",
+                          style: new TextStyle(
+                            fontSize: 12.0,
+                            color: Colors.grey,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              new Padding(
+                padding: new EdgeInsets.only(left: 16.0, right: 18.5),
+                child: new Image.asset(
+                  "assets/images/ic_me_btn.png",
+                  width: 32.0,
+                  height: 32.0,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
       body: new TabBarView(
         controller: _tabController,
         children: [
