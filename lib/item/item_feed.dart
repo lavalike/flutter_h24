@@ -49,7 +49,7 @@ class _FeedItemState extends State<FeedItem> {
                     ),
                     new GestureDetector(
                       onTap: () {
-                        //点击订阅
+                        ToastUtil.show("订阅");
                       },
                       child: new Container(
                         padding: new EdgeInsets.only(
