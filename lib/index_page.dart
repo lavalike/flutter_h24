@@ -148,17 +148,39 @@ class _IndexPageState extends State<IndexPage>
     return new Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        new Image.asset(
-//          _currentIndex == index ? iconSelected : iconNormal,
-          iconNormal,
-          width: iconSize,
-          height: iconSize,
-        ),
+        _buildTabIcon(index, iconNormal),
         new Text(
           title,
           style: _tabTitleStyle,
         ),
       ],
     );
+  }
+
+  Widget _buildTabIcon(int index, String iconNormal) {
+    if (index == 2) {
+      return new Container(
+        width: iconSize,
+        height: iconSize,
+        child: new OverflowBox(
+          maxHeight: double.infinity,
+          maxWidth: double.infinity,
+          child: new Padding(
+            padding: new EdgeInsets.only(bottom: 30.0),
+            child: new Image.asset(
+              iconNormal,
+              width: 53.0,
+              height: 53.0,
+            ),
+          ),
+        ),
+      );
+    } else {
+      return new Image.asset(
+        iconNormal,
+        width: iconSize,
+        height: iconSize,
+      );
+    }
   }
 }
