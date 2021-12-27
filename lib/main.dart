@@ -10,14 +10,12 @@ class Application extends StatelessWidget {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
 //      statusBarColor: Colors.transparent,
 //      statusBarIconBrightness: Brightness.dark,
-    ));
+        ));
     return new MaterialApp(
       title: 'Flutter for 24h',
       theme: new ThemeData(
         primaryColor: Colors.white,
-        primaryTextTheme: new TextTheme(
-            title: new TextStyle(
-        )),
+        primaryTextTheme: new TextTheme(caption: new TextStyle()),
         primaryColorBrightness: Brightness.dark,
         primarySwatch: Colors.grey,
       ),
